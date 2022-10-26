@@ -64,6 +64,7 @@
 	</dependencies>
 
 	<build>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -136,11 +137,11 @@
 	<distributionManagement>
     <snapshotRepository>
       <id>nexus-snapshots</id>
-      <url>http://172.10.0.55:8081/repository/maven-snapshots/</url>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>nexus-releases</id>
-      <url>http://172.10.0.55:8081/repository/maven-releases/</url>
+      <url>http://localhost:8081/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
   
