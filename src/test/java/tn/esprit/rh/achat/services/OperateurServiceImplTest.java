@@ -31,7 +31,7 @@ public class OperateurServiceImplTest {
 		@Test
 		public void testRetrieveSecteur() {
 			Operateur op = new Operateur(1L,"rym","bs","xxx",null);
-			op.setIdOperateur(1L);
+			//op.setIdOperateur(1L);
 			
 			
 			Mockito.when(OPrepository.findById(1L)).thenReturn(Optional.of(op));
@@ -39,6 +39,7 @@ public class OperateurServiceImplTest {
 			Assertions.assertNotNull(op);
 			
 			System.out.println(op);
+			
 			System.out.println("operateur retrouvé");
 		}
 }
