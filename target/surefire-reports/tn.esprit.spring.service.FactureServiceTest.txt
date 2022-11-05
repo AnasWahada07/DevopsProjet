@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: tn.esprit.spring.service.FactureServiceTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.495 s <<< FAILURE! - in tn.esprit.spring.service.FactureServiceTest
-tn.esprit.spring.service.FactureServiceTest  Time elapsed: 0.488 s  <<< ERROR!
-java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
-
