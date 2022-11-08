@@ -14,15 +14,11 @@ import java.util.List;
 @Service
 public class CategorieProduitServiceImpl implements ICategorieProduitService {
 
-	@Autowired
-	ModelMapper modelMapper;
-	
-	@Autowired
-	CategorieProduitConverter categorieproduitConverter;
-	
+
 	
 	@Autowired
 	CategorieProduitRepository categorieProduitRepository;
+	
 	@Override
 	public List<CategorieProduit> retrieveAllCategorieProduits() {
 		
@@ -42,11 +38,9 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 	}
 
 	@Override
-	public CategorieProduitDTO updateCategorieProduit(CategorieProduitDTO cp) {
-		
-		CategorieProduit catp = categorieproduitConverter.convertDtoToEntity(cp);
-		catp = categorieProduitRepository.save(catp);
-		return categorieproduitConverter.convertEntityToDto(catp);
+	public CategorieProduit updateCategorieProduit(CategorieProduit cp) {
+		categorieProduitRepository.save(cp);
+		return cp;
 	}
 
 	@Override

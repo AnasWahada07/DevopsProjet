@@ -1,11 +1,11 @@
 package tn.esprit.rh.achat.controllers;
 
 import io.swagger.annotations.Api;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import tn.esprit.rh.achat.converter.CategorieProduitConverter;
-import tn.esprit.rh.achat.dto.CategorieProduitDTO;
+
 import tn.esprit.rh.achat.entities.CategorieProduit;
 import tn.esprit.rh.achat.services.ICategorieProduitService;
 
@@ -15,12 +15,13 @@ import java.util.List;
 @Api(tags = "Gestion des categories Produit")
 @RequestMapping("/categorieProduit")
 public class CategorieProduitController {
+	
+
 
 	@Autowired
 	ICategorieProduitService categorieProduitService;
 	
-	@Autowired
-	private CategorieProduitConverter cpc;
+
 	
 	// http://localhost:8089/SpringMVC/categorieProduit/retrieve-all-categorieProduit
 	@GetMapping("/retrieve-all-categorieProduit")
@@ -52,8 +53,8 @@ public class CategorieProduitController {
 	// http://localhost:8089/SpringMVC/categorieProduit/modify-categorieProduit
 	@PutMapping("/modify-categorieProduit")
 	@ResponseBody
-	public CategorieProduitDTO modifyCategorieProduit(@RequestBody CategorieProduitDTO categorieProduitDTO) {
-		return categorieProduitService.updateCategorieProduit(categorieProduitDTO);
+	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
+		return categorieProduitService.updateCategorieProduit(categorieProduit);
 	}
 
 	
