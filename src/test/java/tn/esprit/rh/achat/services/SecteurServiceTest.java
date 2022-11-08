@@ -24,7 +24,7 @@ import tn.esprit.rh.achat.services.SecteurActiviteServiceImpl;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-public class SecteurServiceTest {
+class SecteurServiceTest {
 	
 	@Mock
 	SecteurActiviteRepository SecteurRepository;
@@ -33,7 +33,7 @@ public class SecteurServiceTest {
 	SecteurActiviteServiceImpl SecteurService;
 
 	@Test
-	public void testRetrieveSecteur() {
+	void testRetrieveSecteur() {
 		SecteurActivite secteur = new SecteurActivite(1L,"aaa","bbb",null);
 		secteur.setIdSecteurActivite(1L);
 		
@@ -48,19 +48,19 @@ public class SecteurServiceTest {
 	
 	
 	@Test
-	public void createSecteurTest() {
+	void createSecteurTest() {
 		SecteurActivite secteur2 = new SecteurActivite(null,"qqqq","fff",null);
 		secteur2.setIdSecteurActivite(2L);
 		
 		SecteurService.addSecteurActivite(secteur2);
 		verify(SecteurRepository, times(1)).save(secteur2);
 		System.out.println(secteur2); 
-		System.out.println(" Create is working correctly...!!");  
+		System.out.println("Create is working correctly...!!");  
 	}
 	
 	
 	@Test
-	public void getAllSecteursTest() {
+	void getAllSecteursTest() {
 		List<SecteurActivite> SecteurList = new ArrayList<SecteurActivite>() {{
 			
 			add(new SecteurActivite(null,"bbbb","gggg",null));
@@ -77,7 +77,7 @@ public class SecteurServiceTest {
 	}
 	
 	@Test
-	public void TestDeleteSecteur() {
+	void TestDeleteSecteur() {
 		
 		SecteurActivite secteur1 = new SecteurActivite(null,"sec","del",null);
 		secteur1.setIdSecteurActivite(7L);
@@ -88,7 +88,7 @@ public class SecteurServiceTest {
 		verify(SecteurRepository).deleteById(secteur1.getIdSecteurActivite());
 		
 		System.out.println(secteur1);
-		System.out.println(" Delete is working correctly...!!");  
+		System.out.println("Delete is working correctly...!!");  
 		
 	}
 	

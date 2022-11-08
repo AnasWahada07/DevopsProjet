@@ -1,7 +1,11 @@
 package tn.esprit.rh.achat.services;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import tn.esprit.rh.achat.converter.CategorieProduitConverter;
+import tn.esprit.rh.achat.dto.CategorieProduitDTO;
 import tn.esprit.rh.achat.entities.CategorieProduit;
 import tn.esprit.rh.achat.repositories.CategorieProduitRepository;
 
@@ -10,6 +14,12 @@ import java.util.List;
 @Service
 public class CategorieProduitServiceImpl implements ICategorieProduitService {
 
+	@Autowired
+	ModelMapper modelMapper;
+	
+	@Autowired
+	CategorieProduitConverter categorieproduitConverter;
+	
 	
 	@Autowired
 	CategorieProduitRepository categorieProduitRepository;
@@ -32,15 +42,16 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 	}
 
 	@Override
-	public CategorieProduit updateCategorieProduit(CategorieProduit cp) {
-		categorieProduitRepository.save(cp);
-		return cp;
+	public CategorieProduitDTO updateCategorieProduit(CategorieProduitDTO cp) {
+		
+		CategorieProduit catp = categorieproduitConverter.convertDtoToEntity(cp);
+		catp = categorieProduitRepository.save(catp);
+		return categorieproduitConverter.convertEntityToDto(catp);
 	}
 
 	@Override
 	public CategorieProduit retrieveCategorieProduit(Long id) {
-		CategorieProduit categorieProduit = categorieProduitRepository.findById(id).orElse(null);
-		return categorieProduit;
+		return categorieProduitRepository.findById(id).orElse(null);
 	}
 
 }
