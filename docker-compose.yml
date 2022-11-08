@@ -2,7 +2,7 @@ version: "3"
 
 services:
   mysqldb:
-    container_name: mysqldb
+    container_name: database
     image: mysql/mysql-server:8.0
     restart: unless-stopped
     ports:
@@ -15,7 +15,7 @@ services:
 
 
   spring_app:
-    image: abdelmatine/achat-back
+    image: abdelmatine/achat:v1
     container_name: achatspring
     restart: on-failure
     environment:
