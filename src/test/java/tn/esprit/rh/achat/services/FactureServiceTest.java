@@ -52,7 +52,7 @@ public class FactureServiceTest {
 
 
     @Test
-    public void createFacturekTest()
+   public void createFacturekTest()
     {
         Facture facture2 = new Facture(2L, 100, 500, null, null, null, null, null, null);
         facture2.setIdFacture(2L);
@@ -65,7 +65,7 @@ public class FactureServiceTest {
 
 
     @Test
-    public void getAllFactureTest()
+ public   void getAllFactureTest()
     {
         List<Facture> Facturelist = new ArrayList<Facture>() {
 
