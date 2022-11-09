@@ -3,20 +3,20 @@ version: "3"
 services:
   database:
     container_name: database
-    image: mysql:5.7
+    image: mysql/mysql-server:8.0
     restart: unless-stopped
     ports:
-     - 3306:3306
+     - 3307:3307
     environment:
      - MYSQL_ROOT_PASSWORD=0000
      - MYSQL_DATABASE=achatdb
      - MYSQL_USER=root
-     - MYSQL_PASSWORD=
+     - MYSQL_PASSWORD=0000
     volumes:
      - db:/var/lib/mysql
      
   spring_app:
-    image: abdelmatine/achat-1.0
+    image: abdelmatine/achat
     container_name: achatspring
     restart: on-failure
     environment:
