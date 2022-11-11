@@ -29,7 +29,8 @@ public class OperateurServiceImplTest {
 		OperateurServiceImpl opService;
 
 		@Test
-		public void testRetrieveSecteur() {
+		public void testRetrieveOperateur() {
+			
 			Operateur op = new Operateur(1L,"rym","bs","xxx",null);
 			//op.setIdOperateur(1L);
 			
