@@ -1,32 +1,31 @@
 version: "3"
 
 services:
-  database:
-    container_name: database
+  mysqldb:
+    container_name: mysqldb
     image: mysql/mysql-server:8.0
     restart: unless-stopped
     ports:
      - 3307:3307
     environment:
-     - MYSQL_ROOT_PASSWORD=0000
+     - MYSQL_ROOT_PASSWORD=
      - MYSQL_DATABASE=achatdb
      - MYSQL_USER=root
-     - MYSQL_PASSWORD=0000
+     - MYSQL_PASSWORD=
     volumes:
      - db:/var/lib/mysql
      
   spring_app:
-    image: abdelmatine/achat:latest
+    image: abdelmatine/achat
     container_name: achatspring
     restart: on-failure
     environment:
      - spring.datasource.url=jdbc:mysql://mysqldb:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC,
-     - spring.datasource.username = root,
-     - spring.datasource.password = 0000
+
     ports:
      - 8089:8089
     depends_on:
-     - database
+     - mysqldb
 
      
   angular_app:
