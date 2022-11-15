@@ -85,7 +85,7 @@ public class OperateurServiceImplTest {
 	        System.out.println("Op deleted...!!"); 
 
 	    }
-
+//Test update op
 	    @Test
 	    public void updatetStockTest() {
 	        Operateur op = new Operateur(10L,"hjjdjkdkd", "djdujduj","ddddddg",null) ;
