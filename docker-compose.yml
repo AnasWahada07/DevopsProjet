@@ -16,7 +16,7 @@ services:
      - db:/var/lib/mysql
      
   spring_app:
-    image: rymbsj/achat:latest
+    image: rymbsj/achat:73
     container_name: achatspring
     restart: on-failure
     environment:
