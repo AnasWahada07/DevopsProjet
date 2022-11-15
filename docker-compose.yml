@@ -24,7 +24,7 @@ services:
      - spring.datasource.username = root,
      - spring.datasource.password = 
     ports:
-     - 8080:8080
+     - 8089:8089
     depends_on:
      - database
 
