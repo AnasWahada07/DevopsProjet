@@ -38,7 +38,7 @@ public class ProduitServiceTest {
     @Test
     public void testRetrieveProduit() {
 
-        Produit produit = new Produit(1L,"1xl","savon",12.5,new Date(), new Date(),null,null,null);
+        Produit produit = new Produit(1L,"1xl","savon",12,new Date(), new Date(),null,null,null);
 
         produit.setIdProduit(1L);
 
@@ -55,7 +55,7 @@ public class ProduitServiceTest {
     @Test
    public void createProduitTest()
     {
-        Produit produit2 = new Produit(2L,"2xl","lait",10.5,new Date(), new Date(), null, null, null);
+        Produit produit2 = new Produit(2L,"2xl","lait",10,new Date(), new Date(), null, null, null);
         produit2.setIdProduit(2L);
 
         produitService.addProduit(produit2);
@@ -71,9 +71,9 @@ public class ProduitServiceTest {
         List<Produit> Produitlist = new ArrayList<Produit>() {
 
             {
-                add(new Produit(3L,"3xl","cafe",8.5,new Date(), new Date(), null, null, null));
-                add(new Produit(4L,"4xl","fromage",12.5, new Date(), new Date(), null, null, null));
-                add(new Produit(5L,"5xl","table",5.5, new Date(), new Date(), null, null, null));
+                add(new Produit(3L,"3xl","cafe",8,new Date(), new Date(), null, null, null));
+                add(new Produit(4L,"4xl","fromage",12, new Date(), new Date(), null, null, null));
+                add(new Produit(5L,"5xl","table",5, new Date(), new Date(), null, null, null));
             }};
 
 
