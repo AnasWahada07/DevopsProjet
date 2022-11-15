@@ -30,7 +30,7 @@ services:
 
      
   angular_app:
-   image: rymbsj/crudtutofront:v1
+   image: rymbsj/crudtutofront:rk1
    container_name: achatangular
    restart: on-failure
    ports:
