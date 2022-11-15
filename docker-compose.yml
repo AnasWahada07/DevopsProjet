@@ -14,7 +14,7 @@ services:
 
 
   spring_app:
-    image: abdelmatine/achat:38
+    image: abdelmatine/achat:15
     container_name: achatspringo
     restart: on-failure
     environment:
