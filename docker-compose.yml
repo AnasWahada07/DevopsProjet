@@ -16,7 +16,7 @@ services:
      - db:/var/lib/mysql
      
   spring_app:
-    image: anaswahada/achat:v20
+    image: anaswahada/achat:20
     container_name: achatspring
     restart: on-failure
     environment:
