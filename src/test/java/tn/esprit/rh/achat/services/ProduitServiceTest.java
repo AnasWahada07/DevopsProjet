@@ -38,7 +38,7 @@ public class ProduitServiceTest {
     @Test
     public void testRetrieveProduit() {
 
-        Produit produit = new Produit(1L,"1xl","savon",new Date(), new Date(),12.5,null,null,null);
+        Produit produit = new Produit(1L,"1xl","savon",12.5,new Date(), new Date(),null,null,null);
 
         produit.setIdProduit(1L);
 
@@ -55,7 +55,7 @@ public class ProduitServiceTest {
     @Test
    public void createProduitTest()
     {
-        Produit produit2 = new Produit(2L,"2xl","lait",new Date(), new Date(),10.5, null, null, null);
+        Produit produit2 = new Produit(2L,"2xl","lait",10.5,new Date(), new Date(), null, null, null);
         produit2.setIdProduit(2L);
 
         produitService.addProduit(produit2);
