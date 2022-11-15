@@ -16,7 +16,7 @@ services:
      - db:/var/lib/mysql
      
   spring_app:
-    image: anaswahada/achat:latest
+    image: anaswahada/achat:v20
     container_name: achatspring
     restart: on-failure
     environment:
@@ -30,7 +30,7 @@ services:
 
      
   angular_app:
-   image: anaswahada/crudtutofront:v2
+   image: anaswahada/crudtutofront:v3
    container_name: achatangular
    restart: on-failure
    ports:
