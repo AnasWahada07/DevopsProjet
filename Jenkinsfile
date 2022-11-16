@@ -38,19 +38,19 @@ pipeline {
                 sh 'mvn deploy -DskipStaging=true'
             }
         } 
- /*       stage('Docker Enable CD'){
+        stage('Docker version'){
             steps{
                 sh 'docker-compose --version'
             }
         } 
-        stage('Building Docker image') { 
+        stage('Build image') { 
             steps { 
                 script { 
                     dockerImage = docker.build registry + ":$BUILD_NUMBER" 
                 }
             } 
         }
-        stage('Deploy image') { 
+        stage('Deploy') { 
             steps { 
                 script { 
                     docker.withRegistry( '', registryCredential ) { 
@@ -59,11 +59,11 @@ pipeline {
                 } 
             }
         } 
-        stage('Run up') { 
+        stage('Compose') { 
             steps {
-                sh "docker run -d -p 5004:5000 $registry:$BUILD_NUMBER" 
+                sh "docker-compose up" 
             }
-        }*/
+        }
     }
 
 }
