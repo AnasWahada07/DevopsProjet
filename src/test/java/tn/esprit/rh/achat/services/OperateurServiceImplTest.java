@@ -26,7 +26,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 @ExtendWith(MockitoExtension.class)
 
 
-public class OperateurServiceImplTest {
+ class OperateurServiceImplTest {
 
 
 		
@@ -38,7 +38,7 @@ public class OperateurServiceImplTest {
 		
 //test Retrieve op by id
 		@Test
-		public void testRetrieveOperateur() {
+		 void testRetrieveOperateur() {
 			
 			Operateur op = new Operateur(1L,"rym","bs","xxx",null);
 			//op.setIdOperateur(1L);
@@ -54,7 +54,7 @@ public class OperateurServiceImplTest {
 		
 //Test Retrieve all op
 	    @Test
-	    public void retrieveAllOperateur() {
+	     void retrieveAllOperateur() {
 	    	
 	        when(OPrepository.findAll()).thenReturn(Stream.of(
 	                        new Operateur(2L,"salim", "jemai", "csfwe",null),
@@ -68,7 +68,7 @@ public class OperateurServiceImplTest {
 	    }
 //Test Add op
 	    @Test
-	    public void addOperateurTest() {
+	     void addOperateurTest() {
 	        Operateur op = new Operateur(5L,"rym", "bsj", "ccc",null);
 	        when(OPrepository.save(op)).thenReturn(op);
 	        assertEquals(op, opService.addOperateur(op));
@@ -78,7 +78,7 @@ public class OperateurServiceImplTest {
 
 //Test Delete op
 	    @Test
-	    public void deleteOperateurTest() {
+	     void deleteOperateurTest() {
 	        Operateur op = new Operateur(1L,"rym","bs","xxx",null);
 	        opService.deleteOperateur((long) 1);
 	        verify(OPrepository).deleteById(op.getIdOperateur());
@@ -87,7 +87,7 @@ public class OperateurServiceImplTest {
 	    }
 //Test update op
 	    @Test
-	    public void updatetStockTest() {
+	     void updatetStockTest() {
 	        Operateur op = new Operateur(10L,"hjjdjkdkd", "djdujduj","ddddddg",null) ;
 	        Mockito.when(OPrepository.save(Mockito.any(Operateur.class))).thenReturn(op);
 	        op.setIdOperateur(6L);;
