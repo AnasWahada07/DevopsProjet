@@ -22,8 +22,8 @@ public class ProduitRestController {
 	@GetMapping("/retrieve-all-produits")
 	@ResponseBody
 	public List<Produit> getProduits() {
-		
-		return produitService.retrieveAllProduits();
+		List<Produit> list = produitService.retrieveAllProduits();
+		return list;
 	}
 
 	// http://localhost:8089/SpringMVC/produit/retrieve-produit/8
@@ -75,7 +75,6 @@ public class ProduitRestController {
 	public float getRevenuBrutProduit(@PathVariable("idProduit") Long idProduit,
 			@PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
 			@PathVariable(name = "endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date endDate) {
-
 		return produitService.getRevenuBrutProduit(idProduit, startDate, endDate);
 	}*/
 

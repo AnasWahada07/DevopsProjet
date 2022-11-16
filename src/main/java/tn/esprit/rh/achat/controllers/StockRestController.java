@@ -22,8 +22,8 @@ public class StockRestController {
 	@GetMapping("/retrieve-all-stocks")
 	@ResponseBody
 	public List<Stock> getStocks() {
-		
-		return stockService.retrieveAllStocks();
+		List<Stock> list = stockService.retrieveAllStocks();
+		return list;
 	}
 
 	// http://localhost:8089/SpringMVC/stock/retrieve-stock/8
@@ -37,8 +37,8 @@ public class StockRestController {
 	@PostMapping("/add-stock")
 	@ResponseBody
 	public Stock addStock(@RequestBody Stock s) {
-		
-		return stockService.addStock(s);
+		Stock stock = stockService.addStock(s);
+		return stock;
 	}
 
 	// http://localhost:8089/SpringMVC/stock/remove-stock/{stock-id}
@@ -70,5 +70,4 @@ public class StockRestController {
 //	public void retrieveStatusStock() {
 //		stockService.retrieveStatusStock();
 //	}
-
 }

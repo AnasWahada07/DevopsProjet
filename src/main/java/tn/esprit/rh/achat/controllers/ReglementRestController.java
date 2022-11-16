@@ -16,7 +16,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class ReglementRestController {
 
-    @Autowired
+	@Autowired
     IReglementService reglementService;
 
 
@@ -24,14 +24,14 @@ public class ReglementRestController {
     @PostMapping("/add-reglement")
     @ResponseBody
     public Reglement addReglement(@RequestBody Reglement r) {
-        
-        return reglementService.addReglement(r);
+        Reglement reglement = reglementService.addReglement(r);
+        return reglement;
     }
     @GetMapping("/retrieve-all-reglements")
     @ResponseBody
     public List<Reglement> getReglement() {
-       
-        return reglementService.retrieveAllReglements();
+        List<Reglement> list = reglementService.retrieveAllReglements();
+        return list;
     }
 
     // http://localhost:8089/SpringMVC/reglement/retrieve-reglement/8

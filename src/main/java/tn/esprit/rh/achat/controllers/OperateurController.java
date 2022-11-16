@@ -21,8 +21,8 @@ public class OperateurController {
 	@GetMapping("/retrieve-all-operateurs")
 	@ResponseBody
 	public List<Operateur> getOperateurs() {
-	
-		return operateurService.retrieveAllOperateurs();
+		List<Operateur> list = operateurService.retrieveAllOperateurs();
+		return list;
 	}
 
 	// http://localhost:8089/SpringMVC/operateur/retrieve-operateur/8
@@ -36,8 +36,8 @@ public class OperateurController {
 	@PostMapping("/add-operateur")
 	@ResponseBody
 	public Operateur addOperateur(@RequestBody Operateur op) {
-		
-		return operateurService.addOperateur(op);
+		Operateur operateur = operateurService.addOperateur(op);
+		return operateur;
 	}
 
 	// http://localhost:8089/SpringMVC/operateur/remove-operateur/{operateur-id}
@@ -53,6 +53,5 @@ public class OperateurController {
 	public Operateur modifyOperateur(@RequestBody Operateur operateur) {
 		return operateurService.updateOperateur(operateur);
 	}
-
 	
 }
