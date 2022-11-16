@@ -9,7 +9,7 @@ services:
     MYSQL_ROOT_PASSWORD: root
     MYSQL_DATABASE: achatdb
     MYSQL_ROOT: root
-    MYSQL_PASSWORD: root
+    MYSQL_PASSWORD: 0000
     MYSQL_HOST: mysqldb1
    ports:
     - 3307:3306    
