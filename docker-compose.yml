@@ -2,7 +2,7 @@ version: "3"
 
 services:
   mysqldb:
-    container_name: mysqldb
+    container_name: mysqldbbob
     image: mysql/mysql-server:8.0
     restart: unless-stopped
     ports:
@@ -15,18 +15,18 @@ services:
 
   spring_app:
     image: abdelmatine/achat:15
-    container_name: achatspringo
+    container_name: achatspringold
     restart: on-failure
     environment:
      - spring.datasource.url=jdbc:mysql://localhost:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     ports:
      - 8089:8089
     depends_on:
-     - mysqldb
+     - mysqldbbob
 
   angular_app:
     image: abdelmatine/crudtutofront:v1
-    container_name: achatangular
+    container_name: achatangulario
     restart: on-failure
     ports:
      - 4200:80
