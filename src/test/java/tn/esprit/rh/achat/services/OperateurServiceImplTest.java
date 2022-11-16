@@ -26,7 +26,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 @ExtendWith(MockitoExtension.class)
 
 
- class OperateurServiceImplTest {
+public class OperateurServiceImplTest {
 
 
 		
@@ -38,7 +38,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 		
 //test Retrieve op by id
 		@Test
-		 void testRetrieveOperateur() {
+		public void testRetrieveOperateur() {
 			
 			Operateur op = new Operateur(1L,"rym","bs","xxx",null);
 			//op.setIdOperateur(1L);
@@ -54,7 +54,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 		
 //Test Retrieve all op
 	    @Test
-	     void retrieveAllOperateur() {
+	    public void retrieveAllOperateur() {
 	    	
 	        when(OPrepository.findAll()).thenReturn(Stream.of(
 	                        new Operateur(2L,"salim", "jemai", "csfwe",null),
@@ -68,7 +68,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 	    }
 //Test Add op
 	    @Test
-	     void addOperateurTest() {
+	    public void addOperateurTest() {
 	        Operateur op = new Operateur(5L,"rym", "bsj", "ccc",null);
 	        when(OPrepository.save(op)).thenReturn(op);
 	        assertEquals(op, opService.addOperateur(op));
@@ -78,7 +78,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 
 //Test Delete op
 	    @Test
-	     void deleteOperateurTest() {
+	    public void deleteOperateurTest() {
 	        Operateur op = new Operateur(1L,"rym","bs","xxx",null);
 	        opService.deleteOperateur((long) 1);
 	        verify(OPrepository).deleteById(op.getIdOperateur());
@@ -87,7 +87,7 @@ import tn.esprit.rh.achat.repositories.OperateurRepository;
 	    }
 //Test update op
 	    @Test
-	     void updatetStockTest() {
+	    public void updatetStockTest() {
 	        Operateur op = new Operateur(10L,"hjjdjkdkd", "djdujduj","ddddddg",null) ;
 	        Mockito.when(OPrepository.save(Mockito.any(Operateur.class))).thenReturn(op);
 	        op.setIdOperateur(6L);;
