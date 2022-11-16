@@ -29,14 +29,15 @@ public class ReglementServiceImpl implements IReglementService {
 
 	@Override
 	public Reglement retrieveReglement(Long id) {
-			
-		return reglementRepository.findById(id).orElse(null);
+		Reglement reglement = reglementRepository.findById(id).orElse(null);
+		
+		return reglement;
 	}
 
 	@Override
 	public List<Reglement> retrieveReglementByFacture(Long idFacture) {
-		
-		return reglementRepository.retrieveReglementByFacture(idFacture);
+		List<Reglement> reglements= reglementRepository.retrieveReglementByFacture(idFacture);
+		return reglements;
 		
 //		ou bien(Sans JPQL)
 //		Facture f= factureRepository.findById(idFacture).get();
@@ -47,5 +48,4 @@ public class ReglementServiceImpl implements IReglementService {
 	public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate) {
 		return reglementRepository.getChiffreAffaireEntreDeuxDate( startDate, endDate);
 	}
-
 }

@@ -13,6 +13,7 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 	
 	@Autowired
 	CategorieProduitRepository categorieProduitRepository;
+	
 	@Override
 	public List<CategorieProduit> retrieveAllCategorieProduits() {
 		
@@ -39,8 +40,6 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 
 	@Override
 	public CategorieProduit retrieveCategorieProduit(Long id) {
-		
 		return categorieProduitRepository.findById(id).orElse(null);
 	}
-
 }
